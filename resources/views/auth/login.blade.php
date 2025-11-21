@@ -160,6 +160,12 @@
                                         </a>
                                     </div>
                                 @endif
+                                <div class="text-center mt-3">
+    <a href="{{ route('register') }}" class="text-decoration-none">
+        Belum punya akun? Daftar di sini
+    </a>
+</div>
+
                             </form>
                         </div>
 <!-- Login Guide -->

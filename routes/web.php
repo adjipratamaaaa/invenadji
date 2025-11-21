@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StockInController;
 use App\Http\Controllers\StockOutController;
+
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
@@ -16,6 +17,9 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Http\Request;
 use App\Models\Product;
+
+Route::get('/register', [RegisterController::class, 'showForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
 
 // Redirect root to login
 Route::get('/', function () {
@@ -148,11 +152,7 @@ Route::middleware(['auth', 'admin'])->prefix('reports')->group(function () {
     Route::get('/income', [ReportController::class, 'incomeReport'])->name('reports.income');
 });
 
-// Register Routes (Hanya Admin)
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/register', [RegisterController::class, 'create'])->name('register');
-    Route::post('/register', [RegisterController::class, 'store']);
-});
+
 
 // Fallback Route
 Route::fallback(function () {
