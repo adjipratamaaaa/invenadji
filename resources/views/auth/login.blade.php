@@ -74,7 +74,7 @@
             font-size: 0.9rem;
         }
     </style>
-</head>
+</head><div class="login-footer"></div>
 <body>
     <div class="login-container">
         <div class="container">
@@ -162,6 +162,13 @@
                                 @endif
                             </form>
                         </div>
+<!-- Login Guide -->
+<div class="text-center mt-3" style="font-size: 0.85rem; color:#555;">
+    <strong>Panduan Login:</strong><br>
+    Admin: <code>admin@inventory.com</code> / <code>password</code><br>
+    Kasir: <code>kasir@inventory.com</code> / <code>password</code><br>
+    Gudang: <code>gudang@inventory.com</code> / <code>password</code>
+</div>
 
                         <!-- Footer -->
                         <div class="login-footer">
